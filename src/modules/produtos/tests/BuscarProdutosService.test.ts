@@ -1,7 +1,5 @@
 import FakeProdutosRepository from "../../../mochs/repositories/FakeProdutosRepository";
-import ExceptionError from "../../../errors/exception-error";
 import BuscarProdutosService from "../services/BuscarProdutosService";
-import Produto from "../../../database/entities/Produto";
 
 let produtosRepository: FakeProdutosRepository;
 let buscarProdutosService: BuscarProdutosService;

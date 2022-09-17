@@ -1,24 +1,18 @@
-import FakeProdutosRepository from "../../../mochs/repositories/FakeProdutosRepository";
-import CriarProdutoService from "../services/CriarProdutoService";
+import { Request, Response } from 'express';
+import CriarProdutoService from '../services/CriarProdutoService';
 
-let produtosRepository: FakeProdutosRepository;
-let criarProdutoService: CriarProdutoService;
+class CriarProdutoController {
+  constructor(private criarProdutoService: CriarProdutoService) {}
+  
+  async execute(req: Request, res: Response): Promise<Response> {
+    try {
+      const produto = await this.criarProdutoService.execute(req.body);
+      
+      return res.json(produto);
+    } catch (error) {
+      return res.status(error.statusCode || 400).json(error);
+    }
+  }
+}
 
-describe('Teste BuscarProdutoPeloCodigoService', () => {
-  beforeEach(() => {
-    produtosRepository = new FakeProdutosRepository()
-    criarProdutoService = new CriarProdutoService(produtosRepository);
-  });
-
-  test('Criar um produto', async () => {
-    const produto = await criarProdutoService.execute({
-      descricao: 'Macbook Air',
-      peso: 500,
-      preco: 5000,
-      quantidadeEmbalagem: 1,
-      tipoEmbalagem: 1,
-    });
-    
-    expect(produto).toHaveProperty('id')
-  });
-});
+export default CriarProdutoController;

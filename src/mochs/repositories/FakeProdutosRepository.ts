@@ -1,5 +1,3 @@
-import { Repository } from "typeorm";
-import dataSource from "../../database";
 import {
   ICreateProduto,
   IProdutosRepository,

@@ -67,6 +67,6 @@ class ProdutosRepository implements IProdutosRepository {
 
     return;
   }
-};
+}
 
 export default ProdutosRepository;
