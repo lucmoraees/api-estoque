@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 export const fakeProdutos = [
   {
     codigo: 1,
@@ -28,5 +29,5 @@ export const fakeProdutos = [
     peso: 450,
     createdAt: new Date(),
     updatedAt: new Date(),
-  }
-]
+  },
+];

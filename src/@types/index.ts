@@ -3,7 +3,7 @@ export type {
   IFilters,
   IQueryOperacao,
   IQueryFilters,
-} from './global'
+} from './global';
 export type {
   ICreateProduto,
   IAlteracoesProduto,

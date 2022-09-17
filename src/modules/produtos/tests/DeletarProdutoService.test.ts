@@ -1,13 +1,15 @@
-import FakeProdutosRepository from "../../../mochs/repositories/FakeProdutosRepository";
-import ExceptionError from "../../../errors/exception-error";
-import DeletarProdutoService from "../services/DeletarProdutoService";
+/* eslint-disable no-unused-expressions */
+/* eslint-disable no-undef */
+import FakeProdutosRepository from '../../../mochs/repositories/FakeProdutosRepository';
+import ExceptionError from '../../../errors/exception-error';
+import DeletarProdutoService from '../services/DeletarProdutoService';
 
 let produtosRepository: FakeProdutosRepository;
 let deletarProdutoService: DeletarProdutoService;
 
 describe('Teste DeletarProdutoService', () => {
   beforeEach(() => {
-    produtosRepository = new FakeProdutosRepository()
+    produtosRepository = new FakeProdutosRepository();
     deletarProdutoService = new DeletarProdutoService(produtosRepository);
   });
 
@@ -17,7 +19,7 @@ describe('Teste DeletarProdutoService', () => {
 
   test('Não encontrar o produto a partir do código para ser deletado!', async () => {
     expect(
-      deletarProdutoService.execute({ codigo: 1215 })
-    ).rejects.toBeInstanceOf(ExceptionError)
+      deletarProdutoService.execute({ codigo: 1215 }),
+    ).rejects.toBeInstanceOf(ExceptionError);
   });
 });

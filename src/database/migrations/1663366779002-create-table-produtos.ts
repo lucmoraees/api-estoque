@@ -1,6 +1,6 @@
-import { MigrationInterface, QueryRunner, Table } from "typeorm"
+import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 
-export class createTableProdutos1663366779002 implements MigrationInterface {
+class createTableProdutos1663366779002 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(new Table({
       name: 'produtos',
@@ -45,10 +45,12 @@ export class createTableProdutos1663366779002 implements MigrationInterface {
           default: 'now()',
         },
       ],
-    }))
+    }));
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.dropTable('produtos');
   }
 }
+
+export default createTableProdutos1663366779002;

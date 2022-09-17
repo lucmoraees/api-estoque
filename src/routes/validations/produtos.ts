@@ -25,7 +25,7 @@ export const validateCodigoParams = celebrate({
     codigo: Joi.string().required().messages({
       'any.required': 'Código é obrigatório!',
     }),
-  })
+  }),
 });
 
 export const validateFiltersQuery = celebrate({
@@ -37,7 +37,7 @@ export const validateFiltersQuery = celebrate({
     column: Joi.string().allow().default('codigo'),
     value: Joi.string().allow().default('%'),
     operacao: Joi.string().allow().default('contendo'),
-  })
+  }),
 });
 
 export const validateUpdateProduto = celebrate({
@@ -52,5 +52,5 @@ export const validateUpdateProduto = celebrate({
     preco: Joi.number().allow(),
     tipoEmbalagem: Joi.number().allow(),
     quantidadeEmbalagem: Joi.number().allow(),
-  })
+  }),
 });

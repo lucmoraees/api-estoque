@@ -9,6 +9,6 @@ const createProdutoFactory = (req: Request, res: Response) => {
   const criarProdutoController = new CriarProdutoController(criarProdutoService);
 
   return criarProdutoController.execute(req, res);
-}
+};
 
 export default createProdutoFactory;

@@ -1,16 +1,14 @@
 {
   "env": {
       "es2021": true,
-      "node": true,
-      "jest": true
+      "node": true
   },
   "extends": [
-      "plugin:@typescript-eslint/recommended",
       "airbnb-base"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-      "ecmaVersion": 12,
+      "ecmaVersion": "latest",
       "sourceType": "module"
   },
   "plugins": [
@@ -31,7 +29,8 @@
     ],
     "no-empty-function": "off",
     "@typescript-eslint/no-empty-function": "off",
-    "@angular-eslint/no-empty-lifecycle-method": "off"
+    "@angular-eslint/no-empty-lifecycle-method": "off",
+    "class-methods-use-this": "off"
   },
   "settings": {
     "import/resolver": {

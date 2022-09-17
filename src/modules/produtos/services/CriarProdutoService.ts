@@ -1,4 +1,5 @@
-import { ICreateProduto, IProdutosRepository } from "../../../@types";
+/* eslint-disable no-unused-vars */
+import { ICreateProduto, IProdutosRepository } from '../../../@types';
 import ExceptionError from '../../../errors/exception-error';
 
 class CriarProdutoService {

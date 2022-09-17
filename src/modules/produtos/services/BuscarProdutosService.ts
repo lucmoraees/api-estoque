@@ -1,5 +1,6 @@
-import { IFilters, IProdutosRepository } from "../../../@types";
-import Produto from "../../../database/entities/Produto";
+/* eslint-disable no-unused-vars */
+import { IFilters, IProdutosRepository } from '../../../@types';
+import Produto from '../../../database/entities/Produto';
 import { buildTotalPaginas, buildValudByOperacao } from '../../../utils';
 
 interface IParams {
@@ -16,8 +17,10 @@ class BuscarProdutosService {
   constructor(private produtosRepository: IProdutosRepository) {}
 
   async execute({ filters }: IParams): Promise<IResponse> {
-    const quantidadeToSkip = filters.pagina && filters.pagina > 1 ? filters.quantidade * (filters.pagina - 1) : 0;
-    
+    const quantidadeToSkip = filters.pagina && filters.pagina > 1
+      ? filters.quantidade * (filters.pagina - 1)
+      : 0;
+
     const quantidade = filters.quantidade || 10;
 
     const filtros = {

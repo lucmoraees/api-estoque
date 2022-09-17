@@ -1,4 +1,4 @@
-import "reflect-metadata";
+import 'reflect-metadata';
 import express from 'express';
 import http from 'http';
 import cors from 'cors';
@@ -11,7 +11,7 @@ const app = express();
 const server = new http.Server(app);
 
 app.use(express.json());
-app.use(cors())
+app.use(cors());
 app.use(routes);
 app.use(errors());
 

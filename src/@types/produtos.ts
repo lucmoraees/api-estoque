@@ -1,5 +1,5 @@
-import { QueryDeepPartialEntity } from "typeorm/query-builder/QueryPartialEntity";
-import Produto from "../database/entities/Produto";
+import { QueryDeepPartialEntity } from 'typeorm/query-builder/QueryPartialEntity';
+import Produto from '../database/entities/Produto';
 
 export interface ICreateProduto {
   descricao: string;

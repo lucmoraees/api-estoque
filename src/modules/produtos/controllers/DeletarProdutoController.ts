@@ -1,5 +1,6 @@
-import { Request, Response } from "express";
-import DeletarProdutoService from "../services/DeletarProdutoService";
+/* eslint-disable no-unused-vars */
+import { Request, Response } from 'express';
+import DeletarProdutoService from '../services/DeletarProdutoService';
 
 class DeletarProdutoController {
   constructor(private deletarProdutoService: DeletarProdutoService) {}

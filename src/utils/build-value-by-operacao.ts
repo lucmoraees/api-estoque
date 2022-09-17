@@ -1,4 +1,4 @@
-import { IQueryOperacao } from "../@types";
+import { IQueryOperacao } from '../@types';
 
 const buildValudByOperacao = (
   value: string | number | undefined,
@@ -14,6 +14,6 @@ const buildValudByOperacao = (
     case 'igual': return `${value}`;
     default: return `%${value}%`;
   }
-}
+};
 
 export default buildValudByOperacao;

@@ -1,6 +1,7 @@
-import Produto from "../database/entities/Produto";
-import { IQueryFilters } from "./global";
-import { ICreateProduto, IUpdateProduto } from "./produtos";
+/* eslint-disable no-unused-vars */
+import Produto from '../database/entities/Produto';
+import { IQueryFilters } from './global';
+import { ICreateProduto, IUpdateProduto } from './produtos';
 
 export interface IProdutosRepository {
   findByDescricao(descricao: string): Promise<Produto | undefined>

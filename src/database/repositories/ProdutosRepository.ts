@@ -5,7 +5,7 @@ import {
   IQueryFilters,
   IUpdateProduto,
 } from '../../@types';
-import dataSource from '../../database';
+import dataSource from '..';
 import Produto from '../entities/Produto';
 
 class ProdutosRepository implements IProdutosRepository {
@@ -25,7 +25,7 @@ class ProdutosRepository implements IProdutosRepository {
     const novoProduto = this.ormRepository.create(paramsCreate);
 
     await this.ormRepository.save(novoProduto);
-    
+
     return novoProduto;
   }
 
@@ -34,7 +34,7 @@ class ProdutosRepository implements IProdutosRepository {
 
     return produto;
   }
-  
+
   async findWithFilters(filtros: IQueryFilters): Promise<{ data: Produto[], count: number }> {
     const [data, count] = await this.ormRepository
       .createQueryBuilder()
@@ -54,8 +54,6 @@ class ProdutosRepository implements IProdutosRepository {
       .set(alteracoes)
       .where('codigo = :codigo', { codigo })
       .execute();
-
-    return;
   }
 
   async deleteProduto(codigo: number): Promise<void> {
@@ -64,8 +62,6 @@ class ProdutosRepository implements IProdutosRepository {
       .delete()
       .where('codigo = :codigo', { codigo })
       .execute();
-
-    return;
   }
 }
 

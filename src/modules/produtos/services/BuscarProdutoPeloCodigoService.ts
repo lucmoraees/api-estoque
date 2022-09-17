@@ -1,5 +1,6 @@
+/* eslint-disable no-unused-vars */
 import { IProdutosRepository } from '../../../@types';
-import ExceptionError from "../../../errors/exception-error";
+import ExceptionError from '../../../errors/exception-error';
 
 interface IParams {
   codigo: number;

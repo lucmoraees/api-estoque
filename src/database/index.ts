@@ -3,7 +3,7 @@ import { SnakeNamingStrategy } from 'typeorm-naming-strategies';
 
 const pathEntities = `${__dirname}/entities/*.ts`;
 
-const pathMigrations = `${__dirname}/migrations/*.ts`
+const pathMigrations = `${__dirname}/migrations/*.ts`;
 
 const dataSource = new DataSource({
   name: 'default',
@@ -20,6 +20,6 @@ const dataSource = new DataSource({
 
 dataSource.initialize()
   .then(() => console.log('🚀 Banco de dados online'))
-  .catch((err) => console.log('Erro ao estabelecer a conexão com o banco de dados!', err))
+  .catch((err) => console.log('Erro ao estabelecer a conexão com o banco de dados!', err));
 
 export default dataSource;
