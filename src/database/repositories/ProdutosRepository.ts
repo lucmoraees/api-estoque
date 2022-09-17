@@ -42,9 +42,18 @@ const ProdutosRepository = dataSource.getRepository(Produto).extend({
   async updateProduto({ codigo, alteracoes }: IUpdateProduto): Promise<void> {
     await ProdutosRepository
       .createQueryBuilder()
-      .createQueryBuilder()
       .update(Produto)
       .set(alteracoes)
+      .where('codigo = :codigo', { codigo })
+      .execute();
+
+    return;
+  },
+
+  async deleteProduto(codigo: number): Promise<void> {
+    await ProdutosRepository
+      .createQueryBuilder()
+      .delete()
       .where('codigo = :codigo', { codigo })
       .execute();
 
