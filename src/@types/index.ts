@@ -4,4 +4,8 @@ export type {
   IQueryOperacao,
   IQueryFilters,
 } from './global'
-export type { ICreateProduto } from './produtos';
+export type {
+  ICreateProduto,
+  IAlteracoesProduto,
+  IUpdateProduto,
+} from './produtos';

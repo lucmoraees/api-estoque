@@ -5,6 +5,7 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
+import FloatTransformer from '../transformers/FloatTransformer';
 
 @Entity('produtos')
 class Produto {
@@ -14,7 +15,7 @@ class Produto {
   @Column()
     descricao: string;
 
-  @Column()
+  @Column({ transformer: new FloatTransformer() })
     preco: number;
 
   @Column()

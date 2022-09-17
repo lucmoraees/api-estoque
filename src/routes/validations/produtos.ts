@@ -39,3 +39,18 @@ export const validateFiltersQuery = celebrate({
     operacao: Joi.string().allow().default('contendo'),
   })
 });
+
+export const validateUpdateProduto = celebrate({
+  [Segments.PARAMS]: Joi.object().keys({
+    codigo: Joi.string().required().messages({
+      'any.required': 'Código é obrigatório!',
+    }),
+  }),
+  [Segments.BODY]: Joi.object().keys({
+    descricao: Joi.string().allow(),
+    peso: Joi.number().allow(),
+    preco: Joi.number().allow(),
+    tipoEmbalagem: Joi.number().allow(),
+    quantidadeEmbalagem: Joi.number().allow(),
+  })
+});
