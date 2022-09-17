@@ -15,6 +15,12 @@ const ProdutosRepository = dataSource.getRepository(Produto).extend({
     await ProdutosRepository.save(novoProduto);
     
     return novoProduto;
+  },
+
+  async findByCodigo(codigo: number): Promise<Produto | undefined> {
+    const produto = await ProdutosRepository.findOne({ where: { codigo } });
+
+    return produto;
   }
 });
 

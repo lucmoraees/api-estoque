@@ -1,11 +1,14 @@
 import { Router } from 'express';
-import createProdutoFactory from '../modules/produtos/factories/createProdutoFactory';
 import {
-  validateParamsCreateProduto,
+  validateCodigoParams,
+  validateCreateProdutoBody,
 } from './validations/produtos';
+import createProdutoFactory from '../modules/produtos/factories/createProdutoFactory';
+import buscarProdutoPeloCodigoFactory from '../modules/produtos/factories/buscarProdutoPeloCodigoFactory'
 
 const router = Router();
 
-router.post('/produtos', validateParamsCreateProduto, createProdutoFactory);
+router.get('/produtos/:codigo', validateCodigoParams, buscarProdutoPeloCodigoFactory);
+router.post('/produtos', validateCreateProdutoBody, createProdutoFactory);
 
 export default router;
