@@ -27,3 +27,15 @@ export const validateCodigoParams = celebrate({
     }),
   })
 });
+
+export const validateFiltersQuery = celebrate({
+  [Segments.QUERY]: Joi.object().keys({
+    pagina: Joi.string().allow().default(1),
+    quantidade: Joi.string().allow().default(10),
+    columnToOrder: Joi.string().allow().default('codigo'),
+    order: Joi.string().allow().default('ASC'),
+    column: Joi.string().allow().default('codigo'),
+    value: Joi.string().allow().default('%'),
+    operacao: Joi.string().allow().default('contendo'),
+  })
+});
