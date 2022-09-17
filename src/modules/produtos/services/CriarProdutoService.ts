@@ -1,9 +1,8 @@
-import { ICreateProduto } from "../../../@types";
-import ProdutoRepository from "../../../database/repositories/ProdutosRepository";
+import { ICreateProduto, IProdutosRepository } from "../../../@types";
 import ExceptionError from '../../../errors/exception-error';
 
-class CreateProdutoService {
-  constructor(private produtoRepository: typeof ProdutoRepository) {}
+class CriarProdutoService {
+  constructor(private produtosRepository: IProdutosRepository) {}
 
   async execute(params: ICreateProduto) {
     const {
@@ -12,7 +11,7 @@ class CreateProdutoService {
       tipoEmbalagem,
     } = params;
 
-    const produtoExists = await this.produtoRepository.findByDescricao(descricao);
+    const produtoExists = await this.produtosRepository.findByDescricao(descricao);
 
     if (produtoExists) {
       throw new ExceptionError('Produto já cadastrado com essa descrição!', 409);
@@ -26,10 +25,10 @@ class CreateProdutoService {
       throw new ExceptionError('Produtos com o tipo de embalagem pack ou caixa devem possuir quantidade por embalagem maior que 1!', 404);
     }
 
-    const novoProduto = await this.produtoRepository.createProduto(params);
+    const novoProduto = await this.produtosRepository.createProduto(params);
 
     return novoProduto;
   }
 }
 
-export default CreateProdutoService;
+export default CriarProdutoService;

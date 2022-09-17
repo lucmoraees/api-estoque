@@ -1,6 +1,5 @@
-import { IFilters } from "../../../@types";
+import { IFilters, IProdutosRepository } from "../../../@types";
 import Produto from "../../../database/entities/Produto";
-import ProdutosRepository from "../../../database/repositories/ProdutosRepository";
 import { buildTotalPaginas, buildValudByOperacao } from '../../../utils';
 
 interface IParams {
@@ -14,7 +13,7 @@ interface IResponse {
 }
 
 class BuscarProdutosService {
-  constructor(private produtosRepository: typeof ProdutosRepository) {}
+  constructor(private produtosRepository: IProdutosRepository) {}
 
   async execute({ filters }: IParams): Promise<IResponse> {
     const quantidadeToSkip = filters.pagina && filters.pagina > 1 ? filters.quantidade * (filters.pagina - 1) : 0;

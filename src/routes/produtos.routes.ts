@@ -5,7 +5,7 @@ import {
   validateFiltersQuery,
   validateUpdateProduto,
 } from './validations/produtos';
-import createProdutoFactory from '../modules/produtos/factories/createProdutoFactory';
+import createProdutoFactory from '../modules/produtos/factories/criarProdutoFactory';
 import buscarProdutoPeloCodigoFactory from '../modules/produtos/factories/buscarProdutoPeloCodigoFactory'
 import buscarProdutosFactory from '../modules/produtos/factories/buscarProdutosFactory';
 import editarProdutoFactory from '../modules/produtos/factories/editarProdutoFactory';

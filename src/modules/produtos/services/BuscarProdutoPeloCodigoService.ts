@@ -1,4 +1,4 @@
-import ProdutosRepository from "../../../database/repositories/ProdutosRepository";
+import { IProdutosRepository } from '../../../@types';
 import ExceptionError from "../../../errors/exception-error";
 
 interface IParams {
@@ -6,7 +6,7 @@ interface IParams {
 }
 
 class BuscarProdutoPeloCodigoService {
-  constructor(private produtosRepository: typeof ProdutosRepository) {}
+  constructor(private produtosRepository: IProdutosRepository) {}
 
   async execute({ codigo }: IParams) {
     const produto = await this.produtosRepository.findByCodigo(codigo);

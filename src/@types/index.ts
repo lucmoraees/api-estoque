@@ -9,3 +9,6 @@ export type {
   IAlteracoesProduto,
   IUpdateProduto,
 } from './produtos';
+export type {
+  IProdutosRepository,
+} from './repositories';
