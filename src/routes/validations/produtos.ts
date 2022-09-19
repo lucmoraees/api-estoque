@@ -34,7 +34,7 @@ export const validateFiltersQuery = celebrate({
     quantidade: Joi.string().allow().default(10),
     columnToOrder: Joi.string().allow().default('codigo'),
     order: Joi.string().allow().default('ASC'),
-    column: Joi.string().allow().default('codigo'),
+    column: Joi.string().allow(),
     value: Joi.string().allow().default('%'),
     operacao: Joi.string().allow().default('contendo'),
   }),

@@ -36,9 +36,20 @@ class ProdutosRepository implements IProdutosRepository {
   }
 
   async findWithFilters(filtros: IQueryFilters): Promise<{ data: Produto[], count: number }> {
-    const [data, count] = await this.ormRepository
-      .createQueryBuilder()
-      .where(':column like :value', { column: filtros.column, value: filtros.value })
+    const query = this.ormRepository.createQueryBuilder();
+
+    if (filtros.column) {
+      query.where(`${filtros.column} like :value`, { value: filtros.value });
+    } else {
+      query.where('codigo like :value', { value: filtros.value })
+        .orWhere('descricao like :value', { value: filtros.value })
+        .orWhere('preco like :value', { value: filtros.value })
+        .orWhere('tipo_embalagem like :value', { value: filtros.value })
+        .orWhere('quantidade_embalagem like :value', { value: filtros.value })
+        .orWhere('peso like :value', { value: filtros.value });
+    }
+
+    const [data, count] = await query
       .take(filtros.take)
       .skip(filtros.skip)
       .orderBy(filtros.columnToOrder, filtros.order)
