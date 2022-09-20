@@ -8,10 +8,10 @@ const pathMigrations = `${__dirname}/migrations/*.ts`;
 
 const dataSource = new DataSource({
   type: 'postgres',
-  host: process.env.TYPEORM_HOST,
-  port: Number(process.env.TYPEORM_PORT),
-  username: String(process.env.TYPEORM_USERNAME),
-  password: String(process.env.TYPEORM_PASSWORD),
+  host: process.env.DB_HOST,
+  port: Number(process.env.DB_PORT),
+  username: String(process.env.DB_USERNAME),
+  password: String(process.env.DB_PASSWORD),
   database: 'estoque',
   entities: [pathEntities],
   migrations: [pathMigrations],
