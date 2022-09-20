@@ -39,14 +39,14 @@ class ProdutosRepository implements IProdutosRepository {
     const query = this.ormRepository.createQueryBuilder();
 
     if (filtros.column) {
-      query.where(`${filtros.column} like :value`, { value: filtros.value });
+      query.where(`CAST(${filtros.column} as TEXT) like :value`, { value: filtros.value });
     } else {
-      query.where('codigo like :value', { value: filtros.value })
-        .orWhere('descricao like :value', { value: filtros.value })
-        .orWhere('preco like :value', { value: filtros.value })
-        .orWhere('tipo_embalagem like :value', { value: filtros.value })
-        .orWhere('quantidade_embalagem like :value', { value: filtros.value })
-        .orWhere('peso like :value', { value: filtros.value });
+      query.where('CAST(codigo as TEXT) like :value', { value: filtros.value })
+        .orWhere('CAST(descricao as TEXT) like :value', { value: filtros.value })
+        .orWhere('CAST(preco as TEXT) like :value', { value: filtros.value })
+        .orWhere('CAST(tipo_embalagem as TEXT) like :value', { value: filtros.value })
+        .orWhere('CAST(quantidade_embalagem as TEXT) like :value', { value: filtros.value })
+        .orWhere('CAST(peso as TEXT) like :value', { value: filtros.value });
     }
 
     const [data, count] = await query
