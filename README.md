@@ -23,6 +23,7 @@ $ cd api-estoque
 
 Configure the database connection:
 <br>
+<li>OBS: Utilizar banco de dados <b>POSTGRESQL</b></li>
 <li>Configure the file .env</li>
 <li>Run the SQL command&nbsp;&nbsp;<b>CREATE DATABSE estoque</b></li>
 <br>
