@@ -34,7 +34,7 @@ Follow the steps below:
 # Install the dependencies
 $ yarn
 # Run the migrations
-$ yarn typeorm -- -d ./src/database/index.ts migration:run
+$ yarn typeorm -d ./src/database/index.ts migration:run
 # Start the project
 $ yarn dev
 ```
