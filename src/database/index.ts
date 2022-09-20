@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import { DataSource } from 'typeorm';
 import { SnakeNamingStrategy } from 'typeorm-naming-strategies';
 
@@ -6,13 +7,12 @@ const pathEntities = `${__dirname}/entities/*.ts`;
 const pathMigrations = `${__dirname}/migrations/*.ts`;
 
 const dataSource = new DataSource({
-  name: 'default',
-  type: 'mysql',
-  host: 'localhost',
-  port: 3306,
-  username: 'root',
-  password: '123456',
-  database: 'mtrix',
+  type: 'postgres',
+  host: process.env.TYPEORM_HOST,
+  port: Number(process.env.TYPEORM_PORT),
+  username: String(process.env.TYPEORM_USERNAME),
+  password: String(process.env.TYPEORM_PASSWORD),
+  database: 'estoque',
   entities: [pathEntities],
   migrations: [pathMigrations],
   namingStrategy: new SnakeNamingStrategy(),
