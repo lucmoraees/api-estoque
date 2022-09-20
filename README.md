@@ -38,6 +38,12 @@ $ npm run dev
 ```
 The api will be available for access on your browser at http://localhost:3338
 
+To run tests with jest:
+```bash
+# Run the command
+$ npm test
+```
+
 ---
 
 <p align="center">Made with 💜 by Lucas Moraes</p>
