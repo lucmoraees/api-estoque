@@ -34,7 +34,7 @@ $ npm install
 # Run the migrations
 $ npm run typeorm -- -d ./src/database/index.ts migration:run
 # Start the project
-$ npm start
+$ npm run dev
 ```
 The api will be available for access on your browser at http://localhost:3338
 
