@@ -7,9 +7,10 @@
 ## 🧪 Technologies
 This project was developed using the following technologies:
 
-- [Node.js](https://nodejs.org)
+- [Nodejs](https://nodejs.org)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Typeorm](https://typeorm.io/)
+- [Jestjs](https://jestjs.io.io/)
 
 
 ## 🚀 Getting started
@@ -31,18 +32,18 @@ Configure the database connection:
 Follow the steps below:
 ```bash
 # Install the dependencies
-$ npm install
+$ yarn
 # Run the migrations
-$ npm run typeorm -- -d ./src/database/index.ts migration:run
+$ yarn typeorm -- -d ./src/database/index.ts migration:run
 # Start the project
-$ npm run dev
+$ yarn dev
 ```
 The api will be available for access on your browser at http://localhost:3338
 
 To run tests with jest:
 ```bash
 # Run the command
-$ npm test
+$ yarn test
 ```
 
 ---
